@@ -11,7 +11,7 @@ def csv_to_sqlite(csv_fp, connection, tbl_name):
         df = pd.read_csv(csv_fp, index_col='Index', encoding_errors='ignore')
         # Could also use "encoding='ISO-8859–1'" arg but preferred removal of special characters ready for db
     print(f'Dataframe contains {len(df)} rows and {len(df.columns)} columns - headers are:\n{list(df.columns)}')
-    df.to_sql(index_label='Index', name=tbl_name, con=conn, if_exists='replace')
+    df.to_sql(index_label='Index', name=tbl_name, con=connection, if_exists='replace')
     # Set to replace for dev purposes
     print('Dataframe successfully loaded to SQLite database')
 
