@@ -3,7 +3,9 @@ import sqlite3
 
 
 def csv_to_sqlite(csv_fp, connection, tbl_name):
-    """Reads CSV from given filepath and writes to a SQLite database"""
+    """
+    Reads CSV from given filepath and writes to a SQLite database
+    """
     try:
         df = pd.read_csv(csv_fp)
     except UnicodeDecodeError:  # CSV contains encoded special characters (poss written from Excel)
@@ -17,7 +19,9 @@ def csv_to_sqlite(csv_fp, connection, tbl_name):
 
 
 def query_db(connection, sql_fp, ddl=False):
-    """Executes a query against a SQLite database, returns the results as a dataframe, unless DDL"""
+    """
+    Executes a query against a SQLite database, returns the results as a dataframe, unless DDL
+    """
     with open(sql_fp, 'r') as file:
         query = file.read()
     print(f'Executing query:\n{query}')
