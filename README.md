@@ -13,6 +13,7 @@ be dynamic so it has potential for other applications.
 - **Potential Improvements**
     - Add option to pass query string to `query_db`, as well as filepath.
     - `logging.log` would be a better choice than `print` for production code.
+    - Standardise choice of CamelCase vs snake_case for database
   
 ### `store_api.py`
 
