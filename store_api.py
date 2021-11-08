@@ -45,7 +45,7 @@ def manage_creator(creator_id):
     all creator rows from the product table.
     """
     if request.method == 'GET':
-        query = f'''
+        query = '''
             select
                 *
             from
@@ -57,7 +57,7 @@ def manage_creator(creator_id):
         return jsonify(results)
 
     elif request.method == 'DELETE':
-        query = f'''
+        query = '''
                 delete from product
                 where
                     creatorID = ?
