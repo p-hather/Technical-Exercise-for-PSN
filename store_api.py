@@ -60,9 +60,9 @@ def manage_creator(creator_id):
         query = f'''
                 delete from product
                 where
-                    creatorID = {creator_id}
+                    creatorID = ?
                 '''
-        execute_query(query)
+        execute_query(query, [creator_id])
         return jsonify(f'Successfully deleted products from creator with ID {creator_id}')
 
 
